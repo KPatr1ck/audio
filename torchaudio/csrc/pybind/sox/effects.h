@@ -3,7 +3,8 @@
 
 #include <torch/extension.h>
 
-namespace torchaudio::sox_effects {
+namespace torchaudio {
+namespace sox_effects {
 
 auto apply_effects_fileobj(
     py::object fileobj,
@@ -12,6 +13,7 @@ auto apply_effects_fileobj(
     c10::optional<bool> channels_first,
     c10::optional<std::string> format) -> std::tuple<torch::Tensor, int64_t>;
 
+}
 } // namespace torchaudio::sox_effects
 
 #endif

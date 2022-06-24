@@ -3,7 +3,8 @@
 
 #include <torch/extension.h>
 
-namespace torchaudio::sox_io {
+namespace torchaudio {
+namespace sox_io {
 
 auto get_info_fileobj(py::object fileobj, c10::optional<std::string> format)
     -> std::tuple<int64_t, int64_t, int64_t, int64_t, std::string>;
@@ -26,6 +27,7 @@ void save_audio_fileobj(
     c10::optional<std::string> encoding,
     c10::optional<int64_t> bits_per_sample);
 
+}
 } // namespace torchaudio::sox_io
 
 #endif

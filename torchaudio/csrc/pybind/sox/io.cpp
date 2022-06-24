@@ -9,7 +9,8 @@
 
 using namespace torchaudio::sox_utils;
 
-namespace torchaudio::sox_io {
+namespace torchaudio {
+namespace sox_io {
 
 auto get_info_fileobj(py::object fileobj, c10::optional<std::string> format)
     -> std::tuple<int64_t, int64_t, int64_t, int64_t, std::string> {
@@ -187,4 +188,5 @@ void save_audio_fileobj(
   fileobj.attr("write")(py::bytes(buffer.ptr, buffer.size));
 }
 
+}
 } // namespace torchaudio::sox_io
